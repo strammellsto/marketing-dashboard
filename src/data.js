@@ -25,7 +25,7 @@ const PILLARS = [
         id: "showroom",
         name: "Showroom & Office Visual Merchandising",
         vehicles: {
-          '144" MODEs': "Placeholder — describe what's happening for this vehicle here.",
+          'La Mesa': "Store in Store",
           "CREW MODE": "Placeholder — describe what's happening for this vehicle here.",
           "TOUR MODE": "Placeholder — describe what's happening for this vehicle here.",
           "GXV WILD": "Placeholder — describe what's happening for this vehicle here.",
