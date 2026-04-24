@@ -23,15 +23,11 @@ const PILLARS = [
     tactics: [
       {
         id: "showroom",
-        name: "Showroom & Office Visual Merchandising",
-        vehicles: {
-          'La Mesa': "Store in Store",
-          "CREW MODE": "Placeholder — describe what's happening for this vehicle here.",
-          "TOUR MODE": "Placeholder — describe what's happening for this vehicle here.",
-          "GXV WILD": "Placeholder — describe what's happening for this vehicle here.",
-          "GXV HILT": "Placeholder — describe what's happening for this vehicle here.",
-          "GXV EPIC": "Placeholder — describe what's happening for this vehicle here.",
-          "Grand Bohemian": "Placeholder — describe what's happening for this vehicle here.",
+        name: "Showroom Visual Merchandising",
+        dealers: {
+          "La Mesa - West Sac": "Store in Store",
+          "Johnson RV": "Organic media & influencers",
+          "Hawkes RV": "Placeholder.",
         },
       },
       {
