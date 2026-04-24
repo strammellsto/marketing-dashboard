@@ -44,8 +44,8 @@ const PILLARS = [
         id: "sales-show",
         name: "Sales / Show Support",
         vehicles: {
-          '144" MODEs': "Placeholder — describe what's happening for this vehicle here.",
-          "CREW MODE": "Placeholder — describe what's happening for this vehicle here.",
+          '144" MODEs': "DSC Expo",
+          "CREW MODE": " ",
           "TOUR MODE": "Tampa RV Show\nOVE SoCal\nRX3\nMoore Expo\nOVE West ",
           "GXV WILD": "OVE West\nOVE PNW",
           "GXV HILT": "DSC Expo\nOVE SoCal\nRX3\nOVE West",
