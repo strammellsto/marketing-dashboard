@@ -81,7 +81,7 @@ const PILLARS = [
       {
         id: "tour",
         name: "Tour",
-        vehicles: {
+        events: {
           "Tampa RV Show: "Jan 13 - 18",
           "DSC Expo": "Feb 6 - 8",
           "OVE SoCal": "Mar 14 - 15",
