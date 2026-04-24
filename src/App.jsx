@@ -31,8 +31,8 @@ export default function App() {
       <div style={styles.header}>
         <div style={styles.headerInner}>
           <div>
-            <div style={styles.headerLabel}>Marketing Overview</div>
-            <div style={styles.headerTitle}>Marketing Efforts by Pillar</div>
+            <div style={styles.headerLabel}>Storyteller Overland</div>
+            <div style={styles.headerTitle}>Marketing Overview</div>
           </div>
           {activePillar && (
             <button style={styles.backBtn} onClick={backToTop}>← All pillars</button>
