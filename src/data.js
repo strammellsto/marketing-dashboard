@@ -10,10 +10,39 @@
 
 const PILLARS = [
   {
+    id: "leadgen",
+    name: "Lead Gen",
+    color: "#1a4a2e",
+    bg: "#d6ede0",
+    tactics: [
+      {
+        id: "digital-marketing",
+        name: "Integrated Digital Marketing & Demand Gen",
+        dealers: {
+          "Placeholder": "Describe what's happening here.",
+        },
+      },
+      {
+        id: "campaigns",
+        name: "Campaigns (Email / Digital)",
+        dealers: {
+          "Placeholder": "Describe what's happening here.",
+        },
+      },
+      {
+        id: "promotions",
+        name: "Promotions",
+        dealers: {
+          "Placeholder": "Describe what's happening here.",
+        },
+      },
+    ],
+  },
+  {
     id: "dealer",
     name: "Dealer Channels",
-    color: "#1a56a0",
-    bg: "#e8f0fb",
+    color: "#2d6e47",
+    bg: "#ddf0e5",
     tactics: [
       {
         id: "showroom",
@@ -56,82 +85,35 @@ const PILLARS = [
     ],
   },
   {
-    id: "community",
-    name: "Community",
-    color: "#2d7a3a",
-    bg: "#e6f4e8",
+    id: "pr",
+    name: "PR / Media",
+    color: "#3d8f5f",
+    bg: "#e3f5eb",
     tactics: [
       {
-        id: "app",
-        name: "App",
+        id: "print",
+        name: "Print (Paid & Earned)",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
       },
       {
-        id: "tour",
-        name: "Tour",
-        events: {
-          "Tampa RV Show": "Jan 13 - 18",
-          "DSC Expo": "Feb 6 - 8",
-          "OVE SoCal": "Mar 14 - 15",
-          "Moore Expo": "Apr 17 - 19",
-          "Grenadier Gathering West": "Apr 30 - May 3",
-          "OVE West": "May 15 - 17",
-          "Backcountry Off Road Expo - Utah": "May 22 - 23",
-          "OVE PNW": "Jun 26 - 28",
-          "OVE Mtn West": "Aug 21 - 23",
-          "Hershey RV Show": "Sept 26 - 28",
-          "Grenadier Gathering East": "Oct 8 - 11",
-          "OVE East": "Oct 23 - 25",
-        },
-      },
-      {
-        id: "experiences",
-        name: "Experiences",
+        id: "influencers",
+        name: "Influencers",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
       },
       {
-        id: "activations",
-        name: "Activations",
+        id: "press",
+        name: "Press & Media",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
       },
       {
-        id: "blogs",
-        name: "Blogs",
-        dealers: {
-          "Placeholder": "Describe what's happening here.",
-        },
-      },
-    ],
-  },
-  {
-    id: "sales",
-    name: "Sales Support",
-    color: "#7a4a0a",
-    bg: "#faf0e0",
-    tactics: [
-      {
-        id: "digital-marketing",
-        name: "Integrated Digital Marketing & Demand Gen",
-        dealers: {
-          "Placeholder": "Describe what's happening here.",
-        },
-      },
-      {
-        id: "campaigns",
-        name: "Campaigns (Email / Digital)",
-        dealers: {
-          "Placeholder": "Describe what's happening here.",
-        },
-      },
-      {
-        id: "promotions",
-        name: "Promotions",
+        id: "brand-moments",
+        name: "Brand Moments & Product",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
@@ -141,8 +123,8 @@ const PILLARS = [
   {
     id: "brand",
     name: "Brand Experience",
-    color: "#0f6e56",
-    bg: "#e0f4ee",
+    color: "#4eaa78",
+    bg: "#eaf7f0",
     tactics: [
       {
         id: "web",
@@ -189,35 +171,53 @@ const PILLARS = [
     ],
   },
   {
-    id: "pr",
-    name: "PR / Media",
-    color: "#8c2d50",
-    bg: "#f9e8ef",
+    id: "community",
+    name: "Community",
+    color: "#6dc49a",
+    bg: "#f0faf5",
     tactics: [
       {
-        id: "print",
-        name: "Print (Paid & Earned)",
+        id: "app",
+        name: "App",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
       },
       {
-        id: "influencers",
-        name: "Influencers",
+        id: "tour",
+        name: "Tour",
+        events: {
+          "Tampa RV Show": "Jan 13 - 18",
+          "DSC Expo": "Feb 6 - 8",
+          "OVE SoCal": "Mar 14 - 15",
+          "Moore Expo": "Apr 17 - 19",
+          "Grenadier Gathering West": "Apr 30 - May 3",
+          "OVE West": "May 15 - 17",
+          "Backcountry Off Road Expo - Utah": "May 22 - 23",
+          "OVE PNW": "Jun 26 - 28",
+          "OVE Mtn West": "Aug 21 - 23",
+          "Hershey RV Show": "Sept 26 - 28",
+          "Grenadier Gathering East": "Oct 8 - 11",
+          "OVE East": "Oct 23 - 25",
+        },
+      },
+      {
+        id: "experiences",
+        name: "Experiences",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
       },
       {
-        id: "press",
-        name: "Press & Media",
+        id: "activations",
+        name: "Activations",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
       },
       {
-        id: "brand-moments",
-        name: "Brand Moments & Product",
+        id: "blogs",
+        name: "Blogs",
         dealers: {
           "Placeholder": "Describe what's happening here.",
         },
