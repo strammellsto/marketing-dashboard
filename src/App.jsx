@@ -64,13 +64,14 @@ export default function App() {
             {PILLARS.map((p) => (
               <button
                 key={p.id}
-                style={{ ...styles.pillarCard, background: p.bg, borderColor: p.color + "33" }}
+                style={{ ...styles.pillarCard, background: p.bg, border: "none" }}
                 onClick={() => selectPillar(p)}
               >
-                <div style={{ ...styles.pillarDot, background: p.color }} />
-                <div style={{ ...styles.pillarName, color: p.color }}>{p.name}</div>
-                <div style={{ ...styles.pillarCount, color: p.color + "bb" }}>{p.tactics.length} tactics</div>
-                <div style={{ ...styles.pillarArrow, color: p.color }}>→</div>
+                <div style={{ ...styles.pillarName, color: p.textColor }}>{p.name}</div>
+                <div style={{ ...styles.pillarCount, color: p.textColor, opacity: 0.75 }}>
+                  {p.tactics.length} tactics
+                </div>
+                <div style={{ ...styles.pillarArrow, color: p.textColor, opacity: 0.6 }}>→</div>
               </button>
             ))}
           </div>
@@ -83,7 +84,11 @@ export default function App() {
               {activePillar.tactics.map((t) => (
                 <button
                   key={t.id}
-                  style={{ ...styles.tacticRow, borderLeftColor: activePillar.color, background: activePillar.bg }}
+                  style={{
+                    ...styles.tacticRow,
+                    borderLeft: `4px solid ${activePillar.color}`,
+                    background: activePillar.bg + "33",
+                  }}
                   onClick={() => selectTactic(t)}
                 >
                   <span style={styles.tacticRowName}>{t.name}</span>
@@ -95,9 +100,9 @@ export default function App() {
         )}
 
         {activePillar && activeTactic && (() => {
-         const data = activeTactic.events || activeTactic.dealers || activeTactic.vehicles || activeTactic.items || {};
-const isEventFormat = activeTactic.events !== undefined;
-const entries = Object.entries(data);
+          const isEventFormat = activeTactic.events !== undefined;
+          const data = activeTactic.events || activeTactic.dealers || activeTactic.vehicles || activeTactic.items || {};
+          const entries = Object.entries(data);
           return (
             <div>
               <div style={{ ...styles.levelTitle, color: activePillar.color }}>{activeTactic.name}</div>
@@ -107,9 +112,7 @@ const entries = Object.entries(data);
                     key={name}
                     style={{
                       ...(isEventFormat ? styles.eventCard : styles.vehicleCard),
-                      borderTopColor: activePillar.color,
-                      borderTopWidth: 3,
-                      borderTopStyle: "solid",
+                      borderTop: `3px solid ${activePillar.color}`,
                     }}
                   >
                     <div style={{ ...styles.vehicleName, color: activePillar.color }}>{name}</div>
@@ -145,12 +148,11 @@ const styles = {
   breadcrumbActive: { color: "#1a1a1a", fontWeight: 500 },
   breadcrumbSep: { color: "#ccc" },
   body: { padding: "2rem 2.5rem", maxWidth: 1100, margin: "0 auto" },
-  pillarGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 },
-  pillarCard: { border: "1.5px solid", borderRadius: 14, padding: "1.5rem 1.25rem", cursor: "pointer", textAlign: "left", fontFamily: "inherit", position: "relative" },
-  pillarDot: { width: 8, height: 8, borderRadius: "50%", marginBottom: 12 },
-  pillarName: { fontSize: 15, fontWeight: 600, lineHeight: 1.3, marginBottom: 6 },
+  pillarGrid: { display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: 0 },
+  pillarCard: { borderRadius: 0, padding: "2rem 1.25rem 1.5rem", cursor: "pointer", textAlign: "left", fontFamily: "inherit", position: "relative", minHeight: 140 },
+  pillarName: { fontSize: 16, fontWeight: 700, lineHeight: 1.3, marginBottom: 8 },
   pillarCount: { fontSize: 12, fontWeight: 400 },
-  pillarArrow: { position: "absolute", bottom: "1.1rem", right: "1.1rem", fontSize: 16, opacity: 0.5 },
+  pillarArrow: { position: "absolute", bottom: "1.1rem", right: "1.1rem", fontSize: 16 },
   levelTitle: { fontSize: 22, fontWeight: 700, marginBottom: "1.25rem" },
   tacticList: { display: "flex", flexDirection: "column", gap: 10 },
   tacticRow: { display: "flex", alignItems: "center", justifyContent: "space-between", borderRadius: 10, padding: "1rem 1.25rem", cursor: "pointer", fontFamily: "inherit", border: "1px solid transparent", textAlign: "left" },
