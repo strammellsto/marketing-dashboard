@@ -12,8 +12,9 @@ const PILLARS = [
   {
     id: "leadgen",
     name: "Lead Gen",
-    color: "#1a4a2e",
-    bg: "#d6ede0",
+    color: "#0d2d4a",
+    textColor: "#ffffff",
+    bg: "#0d2d4a",
     tactics: [
       {
         id: "digital-marketing",
@@ -41,8 +42,9 @@ const PILLARS = [
   {
     id: "dealer",
     name: "Dealer Channels",
-    color: "#2d6e47",
-    bg: "#ddf0e5",
+    color: "#c0272d",
+    textColor: "#ffffff",
+    bg: "#c0272d",
     tactics: [
       {
         id: "showroom",
@@ -87,8 +89,9 @@ const PILLARS = [
   {
     id: "pr",
     name: "PR / Media",
-    color: "#3d8f5f",
-    bg: "#e3f5eb",
+    color: "#f07800",
+    textColor: "#1a1a1a",
+    bg: "#f07800",
     tactics: [
       {
         id: "print",
@@ -123,8 +126,9 @@ const PILLARS = [
   {
     id: "brand",
     name: "Brand Experience",
-    color: "#4eaa78",
-    bg: "#eaf7f0",
+    color: "#c17f00",
+    textColor: "#1a1a1a",
+    bg: "#f9b234",
     tactics: [
       {
         id: "web",
@@ -173,8 +177,9 @@ const PILLARS = [
   {
     id: "community",
     name: "Community",
-    color: "#6dc49a",
-    bg: "#f0faf5",
+    color: "#7a6e00",
+    textColor: "#1a1a1a",
+    bg: "#e8dfa0",
     tactics: [
       {
         id: "app",
