@@ -113,33 +113,43 @@ export default function App() {
           </div>
         )}
 
-        {activePillar && activeTactic && (
-          <div>
-            <div style={{ ...styles.levelTitle, color: activePillar.color }}>
-              {activeTactic.name}
-            </div>
-            <div style={styles.vehicleGrid}>
-              {Object.entries(activeTactic.dealers || activeTactic.vehicles || {}).map(([name, detail]) => (
-                <div
-                  key={name}
-                  style={{
-                    ...styles.vehicleCard,
-                    borderTopColor: activePillar.color,
-                    borderTopWidth: 3,
-                    borderTopStyle: "solid",
-                  }}
-                >
-                  <div style={{ ...styles.vehicleName, color: activePillar.color }}>{name}</div>
-                  <div style={styles.vehicleDetail}>
-                    {(detail || "No details yet.").split("|").map((line, i) => (
-  <span key={i}>{line}<br/></span>
-))}
+        {activePillar && activeTactic && (() => {
+          const isEventFormat = activeTactic.events !== undefined;
+          const entries = Object.entries(
+            activeTactic.events || activeTactic.dealers || activeTactic.vehicles || {}
+          );
+          return (
+            <div>
+              <div style={{ ...styles.levelTitle, color: activePillar.color }}>
+                {activeTactic.name}
+              </div>
+              <div style={isEventFormat ? styles.eventGrid : styles.vehicleGrid}>
+                {entries.map(([name, detail]) => (
+                  <div
+                    key={name}
+                    style={{
+                      ...(isEventFormat ? styles.eventCard : styles.vehicleCard),
+                      borderTopColor: activePillar.color,
+                      borderTopWidth: 3,
+                      borderTopStyle: "solid",
+                    }}
+                  >
+                    <div style={{ ...styles.vehicleName, color: activePillar.color }}>{name}</div>
+                    {isEventFormat ? (
+                      <div style={styles.eventDate}>{detail}</div>
+                    ) : (
+                      <div style={styles.vehicleDetail}>
+                        {(detail || "No details yet.").split("|").map((line, i) => (
+                          <span key={i}>{line.trim()}<br /></span>
+                        ))}
+                      </div>
+                    )}
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
       </div>
     </div>
   );
@@ -294,6 +304,23 @@ const styles = {
     borderRadius: 12,
     padding: "1.1rem 1.25rem",
     border: "1px solid #e8e6e0",
+  },
+  eventGrid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+    gap: 12,
+  },
+  eventCard: {
+    background: "#fff",
+    borderRadius: 12,
+    padding: "1rem 1.1rem",
+    border: "1px solid #e8e6e0",
+  },
+  eventDate: {
+    fontSize: 13,
+    color: "#777",
+    marginTop: 4,
+    fontWeight: 400,
   },
   vehicleName: {
     fontSize: 13,
