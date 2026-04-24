@@ -82,7 +82,7 @@ const PILLARS = [
         id: "tour",
         name: "Tour",
         events: {
-          "Tampa RV Show: "Jan 13 - 18",
+          "Tampa RV Show": "Jan 13 - 18",
           "DSC Expo": "Feb 6 - 8",
           "OVE SoCal": "Mar 14 - 15",
           "Moore Expo": "Apr 17 - 19",
@@ -92,8 +92,8 @@ const PILLARS = [
           "OVE PNW": "Jun 26 - 28",
           "OVE Mtn West": "Aug 21 - 23",
           "Hershey RV Show": "Sept 26 - 20",
-          "Grenadier Gathering East", "Oct 8 - 11"
-          "OVE East":, "Oct 23 - 25",
+          "Grenadier Gathering East": "Oct 8 - 11"
+          "OVE East": "Oct 23 - 25",
         },
       },
       {
