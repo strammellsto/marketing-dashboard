@@ -23,14 +23,8 @@ export default function App() {
     }
   }
 
-  function back() {
-    setActiveTactic(null);
-  }
-
-  function backToTop() {
-    setActivePillar(null);
-    setActiveTactic(null);
-  }
+  function back() { setActiveTactic(null); }
+  function backToTop() { setActivePillar(null); setActiveTactic(null); }
 
   return (
     <div style={styles.root}>
@@ -41,12 +35,9 @@ export default function App() {
             <div style={styles.headerTitle}>Marketing Efforts by Pillar</div>
           </div>
           {activePillar && (
-            <button style={styles.backBtn} onClick={backToTop}>
-              ← All pillars
-            </button>
+            <button style={styles.backBtn} onClick={backToTop}>← All pillars</button>
           )}
         </div>
-
         {activePillar && (
           <div style={styles.breadcrumb}>
             <span style={styles.breadcrumbInactive} onClick={backToTop}>Home</span>
@@ -78,9 +69,7 @@ export default function App() {
               >
                 <div style={{ ...styles.pillarDot, background: p.color }} />
                 <div style={{ ...styles.pillarName, color: p.color }}>{p.name}</div>
-                <div style={{ ...styles.pillarCount, color: p.color + "bb" }}>
-                  {p.tactics.length} tactics
-                </div>
+                <div style={{ ...styles.pillarCount, color: p.color + "bb" }}>{p.tactics.length} tactics</div>
                 <div style={{ ...styles.pillarArrow, color: p.color }}>→</div>
               </button>
             ))}
@@ -89,24 +78,16 @@ export default function App() {
 
         {activePillar && !activeTactic && (
           <div>
-            <div style={{ ...styles.levelTitle, color: activePillar.color }}>
-              {activePillar.name}
-            </div>
+            <div style={{ ...styles.levelTitle, color: activePillar.color }}>{activePillar.name}</div>
             <div style={styles.tacticList}>
               {activePillar.tactics.map((t) => (
                 <button
                   key={t.id}
-                  style={{
-                    ...styles.tacticRow,
-                    borderLeftColor: activePillar.color,
-                    background: activePillar.bg,
-                  }}
+                  style={{ ...styles.tacticRow, borderLeftColor: activePillar.color, background: activePillar.bg }}
                   onClick={() => selectTactic(t)}
                 >
                   <span style={styles.tacticRowName}>{t.name}</span>
-                  <span style={{ ...styles.tacticRowArrow, color: activePillar.color }}>
-                    View details →
-                  </span>
+                  <span style={{ ...styles.tacticRowArrow, color: activePillar.color }}>View details →</span>
                 </button>
               ))}
             </div>
@@ -120,9 +101,7 @@ export default function App() {
           );
           return (
             <div>
-              <div style={{ ...styles.levelTitle, color: activePillar.color }}>
-                {activeTactic.name}
-              </div>
+              <div style={{ ...styles.levelTitle, color: activePillar.color }}>{activeTactic.name}</div>
               <div style={isEventFormat ? styles.eventGrid : styles.vehicleGrid}>
                 {entries.map(([name, detail]) => (
                   <div
@@ -156,182 +135,33 @@ export default function App() {
 }
 
 const styles = {
-  root: {
-    minHeight: "100vh",
-    background: "#f7f6f3",
-    fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif",
-  },
-  header: {
-    background: "#fff",
-    borderBottom: "1px solid #e8e6e0",
-    padding: "1.5rem 2.5rem 1rem",
-    position: "sticky",
-    top: 0,
-    zIndex: 10,
-  },
-  headerInner: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  headerLabel: {
-    fontSize: 11,
-    letterSpacing: "0.1em",
-    textTransform: "uppercase",
-    color: "#999",
-    fontWeight: 500,
-    marginBottom: 2,
-  },
-  headerTitle: {
-    fontSize: 20,
-    fontWeight: 600,
-    color: "#1a1a1a",
-  },
-  backBtn: {
-    background: "none",
-    border: "1px solid #ddd",
-    borderRadius: 8,
-    padding: "6px 14px",
-    fontSize: 13,
-    color: "#555",
-    cursor: "pointer",
-    fontFamily: "inherit",
-  },
-  breadcrumb: {
-    display: "flex",
-    alignItems: "center",
-    gap: 6,
-    marginTop: 8,
-    fontSize: 13,
-  },
-  breadcrumbInactive: {
-    color: "#999",
-    cursor: "pointer",
-    textDecoration: "underline",
-    textDecorationColor: "#ccc",
-  },
-  breadcrumbActive: {
-    color: "#1a1a1a",
-    fontWeight: 500,
-  },
-  breadcrumbSep: {
-    color: "#ccc",
-  },
-  body: {
-    padding: "2rem 2.5rem",
-    maxWidth: 1100,
-    margin: "0 auto",
-  },
-  pillarGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-    gap: 14,
-  },
-  pillarCard: {
-    border: "1.5px solid",
-    borderRadius: 14,
-    padding: "1.5rem 1.25rem",
-    cursor: "pointer",
-    textAlign: "left",
-    transition: "transform 0.12s, box-shadow 0.12s",
-    fontFamily: "inherit",
-    position: "relative",
-  },
-  pillarDot: {
-    width: 8,
-    height: 8,
-    borderRadius: "50%",
-    marginBottom: 12,
-  },
-  pillarName: {
-    fontSize: 15,
-    fontWeight: 600,
-    lineHeight: 1.3,
-    marginBottom: 6,
-  },
-  pillarCount: {
-    fontSize: 12,
-    fontWeight: 400,
-  },
-  pillarArrow: {
-    position: "absolute",
-    bottom: "1.1rem",
-    right: "1.1rem",
-    fontSize: 16,
-    opacity: 0.5,
-  },
-  levelTitle: {
-    fontSize: 22,
-    fontWeight: 700,
-    marginBottom: "1.25rem",
-  },
-  tacticList: {
-    display: "flex",
-    flexDirection: "column",
-    gap: 10,
-  },
-  tacticRow: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    borderLeft: "4px solid",
-    borderRadius: 10,
-    padding: "1rem 1.25rem",
-    cursor: "pointer",
-    fontFamily: "inherit",
-    border: "1px solid transparent",
-    transition: "opacity 0.12s",
-    textAlign: "left",
-  },
-  tacticRowName: {
-    fontSize: 15,
-    fontWeight: 500,
-    color: "#1a1a1a",
-  },
-  tacticRowArrow: {
-    fontSize: 13,
-    fontWeight: 500,
-    whiteSpace: "nowrap",
-    marginLeft: 12,
-  },
-  vehicleGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-    gap: 14,
-  },
-  vehicleCard: {
-    background: "#fff",
-    borderRadius: 12,
-    padding: "1.1rem 1.25rem",
-    border: "1px solid #e8e6e0",
-  },
-  eventGrid: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
-    gap: 12,
-  },
-  eventCard: {
-    background: "#fff",
-    borderRadius: 12,
-    padding: "1rem 1.1rem",
-    border: "1px solid #e8e6e0",
-  },
-  eventDate: {
-    fontSize: 13,
-    color: "#777",
-    marginTop: 4,
-    fontWeight: 400,
-  },
-  vehicleName: {
-    fontSize: 13,
-    fontWeight: 700,
-    letterSpacing: "0.04em",
-    textTransform: "uppercase",
-    marginBottom: 8,
-  },
-  vehicleDetail: {
-    fontSize: 14,
-    color: "#555",
-    lineHeight: 1.6,
-  },
+  root: { minHeight: "100vh", background: "#f7f6f3", fontFamily: "'DM Sans', 'Helvetica Neue', sans-serif" },
+  header: { background: "#fff", borderBottom: "1px solid #e8e6e0", padding: "1.5rem 2.5rem 1rem", position: "sticky", top: 0, zIndex: 10 },
+  headerInner: { display: "flex", alignItems: "center", justifyContent: "space-between" },
+  headerLabel: { fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "#999", fontWeight: 500, marginBottom: 2 },
+  headerTitle: { fontSize: 20, fontWeight: 600, color: "#1a1a1a" },
+  backBtn: { background: "none", border: "1px solid #ddd", borderRadius: 8, padding: "6px 14px", fontSize: 13, color: "#555", cursor: "pointer", fontFamily: "inherit" },
+  breadcrumb: { display: "flex", alignItems: "center", gap: 6, marginTop: 8, fontSize: 13 },
+  breadcrumbInactive: { color: "#999", cursor: "pointer", textDecoration: "underline", textDecorationColor: "#ccc" },
+  breadcrumbActive: { color: "#1a1a1a", fontWeight: 500 },
+  breadcrumbSep: { color: "#ccc" },
+  body: { padding: "2rem 2.5rem", maxWidth: 1100, margin: "0 auto" },
+  pillarGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 },
+  pillarCard: { border: "1.5px solid", borderRadius: 14, padding: "1.5rem 1.25rem", cursor: "pointer", textAlign: "left", fontFamily: "inherit", position: "relative" },
+  pillarDot: { width: 8, height: 8, borderRadius: "50%", marginBottom: 12 },
+  pillarName: { fontSize: 15, fontWeight: 600, lineHeight: 1.3, marginBottom: 6 },
+  pillarCount: { fontSize: 12, fontWeight: 400 },
+  pillarArrow: { position: "absolute", bottom: "1.1rem", right: "1.1rem", fontSize: 16, opacity: 0.5 },
+  levelTitle: { fontSize: 22, fontWeight: 700, marginBottom: "1.25rem" },
+  tacticList: { display: "flex", flexDirection: "column", gap: 10 },
+  tacticRow: { display: "flex", alignItems: "center", justifyContent: "space-between", borderRadius: 10, padding: "1rem 1.25rem", cursor: "pointer", fontFamily: "inherit", border: "1px solid transparent", textAlign: "left" },
+  tacticRowName: { fontSize: 15, fontWeight: 500, color: "#1a1a1a" },
+  tacticRowArrow: { fontSize: 13, fontWeight: 500, whiteSpace: "nowrap", marginLeft: 12 },
+  vehicleGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 14 },
+  vehicleCard: { background: "#fff", borderRadius: 12, padding: "1.1rem 1.25rem", border: "1px solid #e8e6e0" },
+  eventGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))", gap: 12 },
+  eventCard: { background: "#fff", borderRadius: 12, padding: "1rem 1.1rem", border: "1px solid #e8e6e0" },
+  eventDate: { fontSize: 13, color: "#777", marginTop: 4 },
+  vehicleName: { fontSize: 13, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 8 },
+  vehicleDetail: { fontSize: 14, color: "#555", lineHeight: 1.6 },
 };
