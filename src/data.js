@@ -72,7 +72,7 @@ const PILLARS = [
   },
   {
     id: "dealer",
-    name: "Dealer Channels",
+    name: "Dealer Retail Marketing",
     color: "#c0272d",
     textColor: "#ffffff",
     bg: "#c0272d",
