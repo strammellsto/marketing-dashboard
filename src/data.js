@@ -45,12 +45,12 @@ const PILLARS = [
         name: "Sales / Show Support",
         vehicles: {
           '144" MODEs': "DSC Expo",
-          "CREW MODE": " ",
-          "TOUR MODE": "Tampa RV Show\nOVE SoCal\nRX3\nMoore Expo\nOVE West ",
-          "GXV WILD": "OVE West\nOVE PNW",
-          "GXV HILT": "DSC Expo\nOVE SoCal\nRX3\nOVE West",
+          "CREW MODE": "Skateboard Across America",
+          "TOUR MODE": "Tampa RV Show | OVE SoCal | RX3 | Moore Expo | OVE West ",
+          "GXV WILD": "OVE West | OVE PNW",
+          "GXV HILT": "DSC Expo | OVE SoCal | RX3 | OVE West",
           "GXV EPIC": "OVE West",
-          "Grand Bohemian": "OVE SoCal\nRX3\nMoore Expo\nGrenadier Gathering\nTrinite Road Rally\nOVE West",
+          "Grand Bohemian": "OVE SoCal | RX3 | Moore Expo | Grenadier Gathering | Trinite Road Rally | OVE West",
         },
       },
       {
