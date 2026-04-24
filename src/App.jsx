@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DEALERS, VEHICLES, PILLARS } from "./data";
+import { PILLARS } from "./data";
 
 export default function App() {
   const [activePillar, setActivePillar] = useState(null);
@@ -34,7 +34,6 @@ export default function App() {
 
   return (
     <div style={styles.root}>
-      {/* Header */}
       <div style={styles.header}>
         <div style={styles.headerInner}>
           <div>
@@ -48,7 +47,6 @@ export default function App() {
           )}
         </div>
 
-        {/* Breadcrumb */}
         {activePillar && (
           <div style={styles.breadcrumb}>
             <span style={styles.breadcrumbInactive} onClick={backToTop}>Home</span>
@@ -70,7 +68,6 @@ export default function App() {
       </div>
 
       <div style={styles.body}>
-        {/* LEVEL 1 — Pillar grid */}
         {!activePillar && (
           <div style={styles.pillarGrid}>
             {PILLARS.map((p) => (
@@ -90,7 +87,6 @@ export default function App() {
           </div>
         )}
 
-        {/* LEVEL 2 — Tactic list for selected pillar */}
         {activePillar && !activeTactic && (
           <div>
             <div style={{ ...styles.levelTitle, color: activePillar.color }}>
@@ -109,7 +105,7 @@ export default function App() {
                 >
                   <span style={styles.tacticRowName}>{t.name}</span>
                   <span style={{ ...styles.tacticRowArrow, color: activePillar.color }}>
-                    View all vehicles →
+                    View details →
                   </span>
                 </button>
               ))}
@@ -117,16 +113,15 @@ export default function App() {
           </div>
         )}
 
-        {/* LEVEL 3 — Vehicle details for selected tactic */}
         {activePillar && activeTactic && (
           <div>
             <div style={{ ...styles.levelTitle, color: activePillar.color }}>
               {activeTactic.name}
             </div>
             <div style={styles.vehicleGrid}>
-              {Object.keys(activeTactic.dealers || activeTactic.vehicles).map((v) => (
+              {Object.entries(activeTactic.dealers || activeTactic.vehicles || {}).map(([name, detail]) => (
                 <div
-                  key={v}
+                  key={name}
                   style={{
                     ...styles.vehicleCard,
                     borderTopColor: activePillar.color,
@@ -134,9 +129,9 @@ export default function App() {
                     borderTopStyle: "solid",
                   }}
                 >
-                  <div style={{ ...styles.vehicleName, color: activePillar.color }}>{v}</div>
+                  <div style={{ ...styles.vehicleName, color: activePillar.color }}>{name}</div>
                   <div style={styles.vehicleDetail}>
-                    {activeTactic.vehicles || activeTactic.dealers[v] || "No details yet."}
+                    {detail || "No details yet."}
                   </div>
                 </div>
               ))}
