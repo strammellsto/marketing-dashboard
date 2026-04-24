@@ -124,7 +124,7 @@ export default function App() {
               {activeTactic.name}
             </div>
             <div style={styles.vehicleGrid}>
-              {VEHICLES.map((v) => (
+              {Object.keys(activeTactic.dealers || activeTactic.vehicles).map((v) => (
                 <div
                   key={v}
                   style={{
@@ -136,7 +136,7 @@ export default function App() {
                 >
                   <div style={{ ...styles.vehicleName, color: activePillar.color }}>{v}</div>
                   <div style={styles.vehicleDetail}>
-                    {activeTactic.vehicles[v] || "No details yet."}
+                    {activeTactic.vehicles || activeTactic.dealers[v] || "No details yet."}
                   </div>
                 </div>
               ))}
