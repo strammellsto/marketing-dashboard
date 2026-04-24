@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { VEHICLES, PILLARS } from "./data";
+import { DEALERS, VEHICLES, PILLARS } from "./data";
 
 export default function App() {
   const [activePillar, setActivePillar] = useState(null);
