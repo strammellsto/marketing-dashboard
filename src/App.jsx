@@ -148,7 +148,7 @@ const styles = {
   breadcrumbActive: { color: "#1a1a1a", fontWeight: 500 },
   breadcrumbSep: { color: "#ccc" },
   body: { padding: "2rem 2.5rem", maxWidth: 1100, margin: "0 auto" },
-  pillarGrid: { display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: 0 },
+  pillarGrid: { display: "grid", gridTemplateColumns: "repeat(5, minmax(0, 1fr))", gap: 12 },
   pillarCard: { borderRadius: 0, padding: "2rem 1.25rem 1.5rem", cursor: "pointer", textAlign: "left", fontFamily: "inherit", position: "relative", minHeight: 140 },
   pillarName: { fontSize: 16, fontWeight: 700, lineHeight: 1.3, marginBottom: 8 },
   pillarCount: { fontSize: 12, fontWeight: 400 },
