@@ -66,7 +66,7 @@ const PILLARS = [
       },
       {
         id: "sales-show",
-        name: "Shows",
+        name: "Events by Vehicle",
         vehicles: {
           '144" MODEs': "DSC Expo",
           "CREW MODE": "",
@@ -75,6 +75,24 @@ const PILLARS = [
           "GXV HILT": "DSC Expo | OVE SoCal | RX3 | OVE West",
           "GXV EPIC": "OVE West",
           "Grand Bohemian": "OVE SoCal | RX3 | Moore Expo | Grenadier Gathering | Trinite Road Rally | OVE West",
+        },
+      },
+       {
+        id: "tour",
+        name: "Tour",
+        events: {
+          "Tampa RV Show": "Jan 13 - 18",
+          "DSC Expo": "Feb 6 - 8",
+          "OVE SoCal": "Mar 14 - 15",
+          "Moore Expo": "Apr 17 - 19",
+          "Grenadier Gathering West": "Apr 30 - May 3",
+          "OVE West": "May 15 - 17",
+          "Backcountry Off Road Expo - Utah": "May 22 - 23",
+          "OVE PNW": "Jun 26 - 28",
+          "OVE Mtn West": "Aug 21 - 23",
+          "Hershey RV Show": "Sept 26 - 28",
+          "Grenadier Gathering East": "Oct 8 - 11",
+          "OVE East": "Oct 23 - 25",
         },
       },
       {
@@ -186,24 +204,6 @@ const PILLARS = [
         name: "App",
         dealers: {
           "Placeholder": "Describe what's happening here.",
-        },
-      },
-      {
-        id: "tour",
-        name: "Tour",
-        events: {
-          "Tampa RV Show": "Jan 13 - 18",
-          "DSC Expo": "Feb 6 - 8",
-          "OVE SoCal": "Mar 14 - 15",
-          "Moore Expo": "Apr 17 - 19",
-          "Grenadier Gathering West": "Apr 30 - May 3",
-          "OVE West": "May 15 - 17",
-          "Backcountry Off Road Expo - Utah": "May 22 - 23",
-          "OVE PNW": "Jun 26 - 28",
-          "OVE Mtn West": "Aug 21 - 23",
-          "Hershey RV Show": "Sept 26 - 28",
-          "Grenadier Gathering East": "Oct 8 - 11",
-          "OVE East": "Oct 23 - 25",
         },
       },
       {
