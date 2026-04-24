@@ -27,7 +27,6 @@ const PILLARS = [
         dealers: {
           "La Mesa - West Sac": "Store in Store",
           "Johnson RV": "Mural in Sandy store, Organic media & influencers",
-          "Hawkes RV": " ",
           "Giant RV": "Backdrop Banner for Showroom",
         },
       },
@@ -42,7 +41,7 @@ const PILLARS = [
       },
       {
         id: "sales-show",
-        name: "Sales / Show Support",
+        name: "Shows",
         vehicles: {
           '144" MODEs': "DSC Expo",
           "CREW MODE": "Skateboard Across America",
