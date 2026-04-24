@@ -37,7 +37,7 @@ const PILLARS = [
           "Placeholder": "Describe what's happening here.",
         },
       },
-             {
+       {
         id: "tour",
         name: "Tour",
         events: {
@@ -53,6 +53,19 @@ const PILLARS = [
           "Hershey RV Show": "Sept 26 - 28",
           "Grenadier Gathering East": "Oct 8 - 11",
           "OVE East": "Oct 23 - 25",
+        },
+      },
+       {
+        id: "sales-show",
+        name: "Events by Vehicle",
+        vehicles: {
+          '144" MODEs': "DSC Expo",
+          "CREW MODE": "",
+          "TOUR MODE": "Tampa RV Show | OVE SoCal | RX3 | Moore Expo | OVE West",
+          "GXV WILD": "OVE West | OVE PNW",
+          "GXV HILT": "DSC Expo | OVE SoCal | RX3 | OVE West",
+          "GXV EPIC": "OVE West",
+          "Grand Bohemian": "OVE SoCal | RX3 | Moore Expo | Grenadier Gathering | Trinite Road Rally | OVE West",
         },
       },
     ],
@@ -80,19 +93,6 @@ const PILLARS = [
           "Vehicle Canvases": "Canvases in each dealer location.",
           "Literature": "Placeholder — describe what's happening here.",
           "Media Kit": "Media kits by product for use in promotional materials, socials, ads, etc.",
-        },
-      },
-      {
-        id: "sales-show",
-        name: "Events by Vehicle",
-        vehicles: {
-          '144" MODEs': "DSC Expo",
-          "CREW MODE": "",
-          "TOUR MODE": "Tampa RV Show | OVE SoCal | RX3 | Moore Expo | OVE West",
-          "GXV WILD": "OVE West | OVE PNW",
-          "GXV HILT": "DSC Expo | OVE SoCal | RX3 | OVE West",
-          "GXV EPIC": "OVE West",
-          "Grand Bohemian": "OVE SoCal | RX3 | Moore Expo | Grenadier Gathering | Trinite Road Rally | OVE West",
         },
       },
       {
