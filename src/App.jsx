@@ -116,14 +116,28 @@ export default function App() {
                     }}
                   >
                     <div style={{ ...styles.vehicleName, color: activePillar.color }}>{name}</div>
-                    {isEventFormat ? (
-                      <div style={styles.eventDate}>{detail}</div>
-                    ) : (
-                      <div style={styles.vehicleDetail}>
-                        {(detail || "No details yet.").split("|").map((line, i) => (
-                          <span key={i}>{line.trim()}<br /></span>
-                        ))}
-                      </div>
+                   {isEventFormat ? (
+  <div style={styles.eventDate}>
+    {(detail || "").split("|").map((part, i) => {
+      const trimmed = part.trim();
+      return trimmed.startsWith("http") ? (
+        <a key={i} href={trimmed} target="_blank" rel="noreferrer" style={styles.eventLink}>View event →</a>
+      ) : (
+        <span key={i} style={{ display: "block" }}>{trimmed}</span>
+      );
+    })}
+  </div>
+) : (
+<div style={styles.vehicleDetail}>
+  {(detail || "No details yet.").split("|").map((line, i) => {
+    const trimmed = line.trim();
+    return trimmed.startsWith("http") ? (
+      <a key={i} href={trimmed} target="_blank" rel="noreferrer" style={styles.eventLink}>View link →</a>
+    ) : (
+      <span key={i} style={{ display: "block" }}>{trimmed}</span>
+    );
+  })}
+</div>
                     )}
                   </div>
                 ))}
@@ -165,4 +179,6 @@ const styles = {
   eventDate: { fontSize: 13, color: "#777", marginTop: 4 },
   vehicleName: { fontSize: 13, fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: 8 },
   vehicleDetail: { fontSize: 14, color: "#555", lineHeight: 1.6 },
+  eventLink: { display: "inline-block", marginTop: 6, fontSize: 12, color: "#555", textDecoration: "underline", cursor: "pointer" },
+
 };
