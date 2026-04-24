@@ -95,10 +95,9 @@ export default function App() {
         )}
 
         {activePillar && activeTactic && (() => {
-          const isEventFormat = activeTactic.events !== undefined;
-          const entries = Object.entries(
-            activeTactic.events || activeTactic.dealers || activeTactic.vehicles || {}
-          );
+         const data = activeTactic.events || activeTactic.dealers || activeTactic.vehicles || activeTactic.items || {};
+const isEventFormat = activeTactic.events !== undefined;
+const entries = Object.entries(data);
           return (
             <div>
               <div style={{ ...styles.levelTitle, color: activePillar.color }}>{activeTactic.name}</div>
