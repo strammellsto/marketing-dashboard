@@ -131,7 +131,9 @@ export default function App() {
                 >
                   <div style={{ ...styles.vehicleName, color: activePillar.color }}>{name}</div>
                   <div style={styles.vehicleDetail}>
-                    {detail || "No details yet."}
+                    {(detail || "No details yet.").split("\\n").map((line, i) => (
+  <span key={i}>{line}<br/></span>
+))}
                   </div>
                 </div>
               ))}
